@@ -4,11 +4,7 @@ import { fetchContacts, addContacts, removeContacts } from './operations';
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: { items: [], isLoading: false, error: null },
-  reducers: {
-    removeContacts(state, action) {
-      state.items.splice(action.payload, 1);
-    },
-  },
+
   extraReducers: builder => {
     builder
       .addCase(fetchContacts.pending, state => {
